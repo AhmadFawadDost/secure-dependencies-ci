@@ -16,8 +16,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-          pip install safety bandit
+        python -m pip install --upgrade pip setuptools==84.2.1
+        pip install -r requirements.txt
+        pip install safety bandit
 
       - name: Run Tests
         run: PYTHONPATH=. pytest tests/
